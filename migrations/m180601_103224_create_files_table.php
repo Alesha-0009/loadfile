@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `files`.
  */
-class m180601_071323_create_files_table extends Migration
+class m180601_103224_create_files_table extends Migration
 {
     /**
      * {@inheritdoc}
@@ -14,6 +14,8 @@ class m180601_071323_create_files_table extends Migration
     {
         $this->createTable('files', [
             'id' => $this->primaryKey(),
+            'name' => $this->string(),
+            'metainfo' => $this->string()
         ]);
     }
 

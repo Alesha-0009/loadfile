@@ -1,6 +1,7 @@
 <?php
 namespace app\components;
 
+use app\models\File;
 use app\models\UploadForm;
 use yii\base\Component;
 use yii\web\UploadedFile;
@@ -27,6 +28,7 @@ class LoadFileComponent extends Component
         foreach ($model->files as $file)
         {
             $file->saveAs($path . $file->baseName . '.' . $file->extension);
+            $model->SaveNewFileRecord($file);
         }
     }
 }

@@ -33,4 +33,16 @@ class UploadForm extends Model
             'files' => 'Выбирите Файл пожалуйста...'
         ];
     }
+
+    /**
+     * Сохранение мета-информации в бд...
+     * @param $file
+     */
+    public function SaveNewFileRecord($file)
+    {
+        $record = new File;
+        $record->name = $file->baseName . '.' . $file->extension;
+        $record->metainfo = '';
+        $record->save();
+    }
 }
